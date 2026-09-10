@@ -1,0 +1,14 @@
+CREATE INDEX idx_locations_city ON locations (city);
+CREATE INDEX idx_locations_state_country ON locations (state, country);
+CREATE INDEX idx_observations_location_time ON weather_observations (location_id, observation_time DESC);
+CREATE INDEX idx_observations_time ON weather_observations (observation_time DESC);
+CREATE INDEX idx_forecasts_location_date ON weather_forecasts (location_id, forecast_date);
+CREATE INDEX idx_forecasts_date ON weather_forecasts (forecast_date);
+CREATE INDEX idx_alerts_location_start ON weather_alerts (location_id, start_time DESC);
+CREATE INDEX idx_alerts_severity_start ON weather_alerts (severity, start_time DESC);
+CREATE INDEX idx_risks_location_time ON risk_assessments (location_id, assessment_time DESC);
+CREATE INDEX idx_advisories_location_crop ON agriculture_advisories (location_id, crop_name);
+CREATE INDEX idx_advisories_validity ON agriculture_advisories (valid_from, valid_until);
+CREATE INDEX idx_climate_location_year ON climate_data (location_id, year, month);
+CREATE INDEX idx_chat_queries_user_time ON chat_queries (user_id, created_at DESC);
+CREATE INDEX idx_chat_queries_location ON chat_queries (location_id) WHERE location_id IS NOT NULL;

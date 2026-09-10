@@ -1,0 +1,1 @@
+"""WeatherGPT FastAPI application."""
